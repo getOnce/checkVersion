@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>检查version</title>
+</head>
+<body>
+	<script>
+	function translate(version){
+	    var res = version.split('.').reverse().reduce(function(p, n, index, arr){
+	        console.log(index)
+	        return p - 0 + n * Math.pow(100, index);
+	    })
+	    return res;
+	}
+	function compare(version1, version2){
+	    var result = translate(version1) > translate(version2)? version1: version2;
+	    console.log(result);
+	    return result;
+	}
+	compare('8.1.1', '8.2.1');
+	</script>
+</body>
+</html>
